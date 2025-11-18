@@ -18,7 +18,7 @@ class HomePage extends Component
         return view('livewire.home-page', [
             'latestPosts' => $latestPosts,
             'generalSetting' => $settings,
-            'akademiks' => $akademiks,
+            'akademikHome' => $akademiks,
         ])->layout('layouts.app', ['title' => 'Home']);
     }
 }

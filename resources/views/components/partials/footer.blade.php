@@ -15,7 +15,7 @@
                 <h3 class="text-lg font-semibold mb-4">Tautan Cepat</h3>
                 <ul class="space-y-2">
                     @if (isset($pages) && $pages->count() > 0)
-                        @foreach ($pages as $page)
+                        @foreach ($pages->where('menu', 'profil') as $page)
                             <li><a href="{{ route('page.show', $page->slug) }}"
                                     class="hover:text-green-400">{{ $page->title }}</a></li>
                         @endforeach

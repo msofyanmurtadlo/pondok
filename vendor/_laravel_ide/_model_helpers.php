@@ -643,6 +643,7 @@ namespace App\Models {
      *
      * @property \Illuminate\Support\Carbon|null $updated_at
      * @property \Illuminate\Support\Carbon|null $created_at
+     * @property mixed $menu
      * @property bool $is_published
      * @property string|null $image
      * @property string $content
@@ -655,6 +656,7 @@ namespace App\Models {
      * @method static \Illuminate\Database\Eloquent\Builder<Page>|Page whereContent($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Page>|Page whereImage($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Page>|Page whereIsPublished($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Page>|Page whereMenu($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Page>|Page whereCreatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Page>|Page whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Page>|Page newModelQuery()

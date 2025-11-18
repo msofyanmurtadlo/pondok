@@ -11,6 +11,7 @@ class Page extends Model
         'slug',
         'content',
         'image',
+        'menu',
         'is_published',
     ];
 }

@@ -14,6 +14,7 @@ use Filament\Resources\Resource;
 use Filament\Actions\DeleteAction;
 use Filament\Support\Icons\Heroicon;
 use Filament\Actions\BulkActionGroup;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Forms\Components\Textarea;
@@ -36,7 +37,7 @@ class PageResource extends Resource
     protected static string | UnitEnum | null $navigationGroup = 'Pages';
 
     protected static ?int $navigationSort = 2;
-    protected static ?string $navigationLabel = 'Informasi';
+    protected static ?string $navigationLabel = 'Semua Pages';
 
     protected static ?string $recordTitleAttribute = 'title';
 
@@ -62,6 +63,17 @@ class PageResource extends Resource
                     ->directory('page-images')
                     ->columnSpanFull()
                     ->required(),
+                Select::make('menu')
+                    ->label('Menu')
+                    ->options([
+                        'profil' => 'Profil',
+                        'penelitian' => 'Penelitian',
+                        'kemahasantrian' => 'Kemahasantrian',
+                        'informasi' => 'Informasi',
+                        'pengabdian' => 'Pengabdian',
+                    ])
+                    ->required()
+                    ->default('informasi'),
                 Toggle::make('is_published')
                     ->label('Published')
                     ->default(true),
@@ -77,6 +89,7 @@ class PageResource extends Resource
                 ImageEntry::make('image'),
                 IconEntry::make('is_published')
                     ->boolean(),
+                TextEntry::make('menu'),
                 TextEntry::make('created_at')
                     ->dateTime(),
                 TextEntry::make('updated_at')
@@ -94,6 +107,7 @@ class PageResource extends Resource
                 TextColumn::make('slug')
                     ->searchable(),
                 ImageColumn::make('image'),
+                TextColumn::make('menu'),
                 IconColumn::make('is_published')
                     ->boolean(),
                 TextColumn::make('created_at')

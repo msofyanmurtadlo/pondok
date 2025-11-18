@@ -313,7 +313,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
 
-                @forelse ($akademiks as $akademik)
+                @forelse ($akademikHome as $akademik)
                     <div>
                         <a href="{{ route('akademik.show', $akademik->slug) }}"
                             class="block relative w-full aspect-square overflow-hidden rounded-lg shadow-lg group">
